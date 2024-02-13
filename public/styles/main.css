@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(134, 240, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+button{
+    width: 15%;
+    border-radius: 5px;
+    padding: 5px;
+}
+#button1:disabled{
+    display: none;
+}
+#answerContainer{
+    background-color: rgb(45, 249, 249);;
+}

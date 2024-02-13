@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Riddle</Title>
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <h3>Lets test your smartness. Here is the riddle!!!</h3>
+        <%= riddle %>
+        <!--To display answer when browser is loaded-->
+        <!--<h3>The answer is</h3><%= answer %>-->
+
+         <!--To display answer when button is clicked:  when the button is clicked, the showAnswer() function is called, and the answer variable is passed as an argument. You can then access this value within the function and perform any necessary actions.-->
+        <button onclick="showAnswer('<%=answer%>')" id="button1" >Click For Answer</button>
+
+
+        <div id="answerContainer"></div>
+        <button onclick="window.location.href='/newRiddle'" id="button2">New Riddle</button>
+            <!-- JavaScript function -->
+        <script>
+        function showAnswer(ans){
+           // alert(`The answer to the function is ${ans}`);
+            // Disable the button
+            document.getElementById("button1").disabled=true;
+            // Create a new h3 element
+            var heading=document.createElement("h3");
+            // Create a text node with the message
+            var textNode1=document.createTextNode("The answer is");
+            // Append the text node to the h3 element
+            heading.appendChild(textNode1);
+            // Get the answer container div
+            var answerContainer=document.getElementById("answerContainer");
+            // Append the h3 element to the answer container
+            answerContainer.appendChild(heading);
+            // Create a new paragraph element
+            var paragraph=document.createElement("p");
+            // Create a text node with the message
+            var textNode=document.createTextNode(ans);
+            // Append the text node to the paragraph element
+            paragraph.appendChild(textNode);
+            // Get the answer container div
+            var answerContainer=document.getElementById("answerContainer");
+            // Append the paragraph element to the answer container
+            answerContainer.appendChild(paragraph);
+        }
+        </script>
+    </body>
+</html>
